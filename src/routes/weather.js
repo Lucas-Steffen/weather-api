@@ -7,11 +7,17 @@ router.get('/weather', async(req, res) =>{
     const { city } = req.query;
     const apiUrl = process.env.WEATHER_API_URL
 
+    if(!city){
+        return res.status(400).json({
+            error: "City is required!"
+        })
+    }
+
     const cacheKey = `weather:${city}`
     const cached = await redis.get(cacheKey);
 
     if(cached){
-        console.log('Cache init')
+        console.log(`Cache found for ${city}`)
         return res.json(JSON.parse(cached))
     }
     const response = await axios.get(
