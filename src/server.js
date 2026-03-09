@@ -14,6 +14,7 @@ const limiter = rateLimit({
 const server = express();
 server.use(router)
 server.use(limiter);
+server.use(express.static('public'));
 
 async function startServer() {
   await redis.connect();
