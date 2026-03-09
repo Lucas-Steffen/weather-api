@@ -1,6 +1,6 @@
 # 🌤️ Weather API
 
-> Project proposed by [roadmap.sh](https://roadmap.sh/projects/weather-api)
+> Project proposed by [roadmap.sh](https://roadmap.sh/projects/weather-api-wrapper-service)
 
 A REST API built with **Node.js + Express** that fetches weather data from [Visual Crossing](https://www.visualcrossing.com/), caches responses in **Redis Cloud** for 12 hours, and serves a static frontend for quick lookups.
 
